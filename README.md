@@ -11,16 +11,18 @@ This project is using the SmartEverything IoT Evaluation Kit (http://www.smartev
 If nothing happens when you try to perform a downlink request, you may need to upgrade your board's firmware.
 
 It is a simple procedure that for the 90% of the cases does not require any Hw patch.
-do the following steps
-
+do the following steps:
 1) run the example "ChangeSerial" that change the internal baudrate to 115200 (a fixed baudrate used by the Telit Fw for the upgrade).
 	Read carefully the comments everything is explained.
-2) run the example "FwUpgrade" following the steps that are showed on the terminal.
-	Choose 1
-3) unplug and plug back agin the power (a simple reset is not enougth)
-4) run the "ChangeSerial" again but assigning the old baudrate (otherwise all the other examples are no more running)
 
-if something goes wrong on step (2)... do not panic, run it again but with an easy HW patch just do a  shotcut in this two hole on JP1
+2) run the example "FwUpgrade" following the steps that are showed on the terminal.
+	Choose 1.
+
+3) unplug and plug back agin the power (a simple reset is not enougth).
+
+4) run the "ChangeSerial" again but assigning the old baudrate (otherwise all the other examples are no more running).
+
+If something goes wrong on step (2)... do not panic, run it again but with an easy HW patch just do a  shotcut in this two hole on JP1.
 
 ## Sigfox Backend
 
