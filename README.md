@@ -27,6 +27,20 @@ If something goes wrong on step (2)... do not panic, run it again but with an ea
 
 ## Sigfox Backend
 
+In your backend SIGFOX go to device type, select the device type you want to configure, you will see an information view of it:
+
+![device type information](img/device_type_info.png)
+
+Then set the downlink mode as DIRECT and configure the downlink data as:
+
+0000000000000001 to switch on the red led
+
+0000000000000002 to switch on the green led
+
+0000000000000003 to switch on the blue led
+
+![config callback](img/edit_info.png)
+
 ## NodeJS app
 
 ## About Sigfox
