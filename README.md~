@@ -3,7 +3,7 @@
 ## Description
 This project demonstrates how to realise a SIGFOX downlink using the SmartEverything Evaluation Kit.
 Depending on the ACK value, the led will change its color when it is received by the SmartEveryThing board.
-The request will be asked by the card when the second button is pressed.
+The request will be asked by the card every 10 minutes or when the button is pressed.
 
 ## Hardware
 This project is using the SmartEverything IoT Evaluation Kit (http://www.smarteverything.it).

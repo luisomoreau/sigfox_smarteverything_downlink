@@ -35,8 +35,7 @@ void loop() {
   
   //Here we send simple message using Sigfox (uplink) when the button one is pressed
   if (isButtonOnePressed()) {
-    //sendSimpleSigfoxMessage("CAFE");
-    getLedStatus();
+    sendSimpleSigfoxMessage("CAFE");
     }
 
   //Here we send a message and we wait to receive the ACK using Sigfox (downlink) when the button two is pressed
@@ -46,17 +45,6 @@ void loop() {
 
 }
 
-int getLedStatus(){
-  ledRedLight(HIGH);
-  delay(500);
-  int led=0;
-  SerialUSB.println("PIN_LED_RED");
-  SerialUSB.println(digitalRead(PIN_LED_RED));
-  SerialUSB.println("PIN_LED_TXL");
-  SerialUSB.println(digitalRead(PIN_LED_TXL));
-  
-  return led;
-}
 
 void sendSimpleSigfoxMessage(String frame){
   resetLEDs();
@@ -221,6 +209,7 @@ void setConfigurationMode(){
   
 }
 
+//Here we switch on the led with a special color depending on the received message
 void setLedFromBackendMessage(String data){
   if(data=="0000000000000001"){
     resetLEDs();
