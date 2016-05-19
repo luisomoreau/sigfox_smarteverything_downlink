@@ -26,7 +26,7 @@ void setup() {
   SerialUSB.begin(115200);
   SigFox.begin(19200);
   delay(100);
-  //setConfigurationMode();
+  setConfigurationMode();
   delay(1000);
   getID();
 }
@@ -123,10 +123,10 @@ void sendAndReceiveSigfoxMessage(){
       SerialUSB.print(output, HEX);
     }
     if(!isStatusSet){
-      status += output;
-      
       if(output == 0xD){
         isStatusSet = true;
+      }else{
+        status += output;
       }
     }else if(!startData){
       temp += output;
@@ -136,10 +136,10 @@ void sendAndReceiveSigfoxMessage(){
         temp = "";
       }
     }else if(!isDataReceived){
-      data += output;
-      
       if(output == 0xD){
         isDataReceived = true;
+      }else{
+        data += output;
       }
     }
     delay(10);
@@ -151,7 +151,7 @@ void sendAndReceiveSigfoxMessage(){
     SerialUSB.println(data);
   }
   
-   if (status == "OK\r"){
+   if (status == "OK"){
     //Success :)
     ledGreenLight(HIGH);
   }
@@ -222,15 +222,15 @@ void setConfigurationMode(){
 }
 
 void setLedFromBackendMessage(String data){
-  if(data=="0000000000000001\r"){
+  if(data=="0000000000000001"){
     resetLEDs();
     ledRedLight(HIGH);
   }
-  if(data=="0000000000000002\r"){
+  if(data=="0000000000000002"){
     resetLEDs();
     ledGreenLight(HIGH);
   }
-  if(data=="0000000000000003\r"){
+  if(data=="0000000000000003"){
     resetLEDs();
     ledBlueLight(HIGH);
   }
