@@ -12,6 +12,7 @@ If nothing happens when you try to perform a downlink request, you may need to u
 
 It is a simple procedure that for the 90% of the cases does not require any Hw patch.
 do the following steps:
+
 1) run the example "ChangeSerial" that change the internal baudrate to 115200 (a fixed baudrate used by the Telit Fw for the upgrade).
 	Read carefully the comments everything is explained.
 
@@ -27,6 +28,15 @@ If something goes wrong on step (2)... do not panic, run it again but with an ea
 ## Sigfox Backend
 
 ## NodeJS app
+
+## About Sigfox
+What is Sigfox?
+
+Sigfox is an connectivity solution dedicated to the Internet of Things.
+
+The operated network is currently operating in +15 countries, on every continent.
+
+Focused on tiny messages (up to 12 bytes) & low energy consumption, it currently powers 7 million devices. Various Sigfox-compatible technical solutions are available, from different silicon vendors. This project uses a SmartEverything prototyping kit
 
 ## Contributors
 Louis Moreau
